@@ -16,11 +16,16 @@ public class Maximum<T> {
 		Optional<T> checkNull = Optional.ofNullable(max.inputArray[max.inputArray.length-1]);
 		if(checkNull.isPresent()) {
 			Arrays.sort(max.inputArray);
+			printMaximum(max.inputArray[max.inputArray.length-1]);
 			return max.inputArray[max.inputArray.length-1];
 		}else{
 			System.out.println("Input is empty");		
 		return null;
 		}
+	}
+	
+	public static <T> void printMaximum(T maximumElement) {
+		System.out.println("Maximum is : "+maximumElement);
 	}
 
 }
