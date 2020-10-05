@@ -1,26 +1,26 @@
 package com.bridgelabz.maximumprogram;
 
 import java.lang.Comparable;
+import java.util.Arrays;
+import java.util.Optional;
 
 public class Maximum<T> {
-	T a;
-	T b;
-	T c;
+	T[] inputArray;
 
-	public Maximum(T a, T b, T c) {
-		this.a = a;
-		this.b = b;
-		this.c = c;
+	public Maximum(T[] inputArray) {
+		this.inputArray = inputArray;
 	}
 
 	public static <T extends Comparable<T>> T findMaximum(Maximum<T> max) {
 
-		T maxInput = max.a;
-		if ((max.b).compareTo(maxInput) > 0)
-			maxInput = max.b;
-		if ((max.c).compareTo(maxInput) > 0)
-			maxInput = max.c;
-		return maxInput;
+		Optional<T> checkNull = Optional.ofNullable(max.inputArray[max.inputArray.length-1]);
+		if(checkNull.isPresent()) {
+			Arrays.sort(max.inputArray);
+			return max.inputArray[max.inputArray.length-1];
+		}else{
+			System.out.println("Input is empty");		
+		return null;
+		}
 	}
 
 }
