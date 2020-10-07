@@ -4,9 +4,5 @@ target/
 .project
 *.class
 .gitattributes
-.gradle/
-build.gradle
-settings.gradle
 gradlew
 gradlew.bat
-gradle/
